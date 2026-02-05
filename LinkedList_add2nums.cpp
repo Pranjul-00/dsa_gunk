@@ -1,6 +1,5 @@
 #include <iostream>
 
-// 1. Definition for singly-linked list (Required for local execution)
 struct ListNode {
     int val;
     ListNode *next;
