@@ -36,7 +36,6 @@ public:
     }
 };
 
-// Helper function to print the list
 void printList(ListNode* node) {
     while (node != nullptr) {
         std::cout << node->val;
@@ -47,24 +46,19 @@ void printList(ListNode* node) {
 }
 
 int main() {
-    // 2. Setup Test Case: 342 + 465 = 807
-    // List 1: 2 -> 4 -> 3
     ListNode* l1 = new ListNode(2);
     l1->next = new ListNode(4);
     l1->next->next = new ListNode(3);
 
-    // List 2: 5 -> 6 -> 4
     ListNode* l2 = new ListNode(5);
     l2->next = new ListNode(6);
     l2->next->next = new ListNode(4);
 
-    // 3. Run Solution
     Solution sol;
     ListNode* result = sol.addTwoNumbers(l1, l2);
 
-    // 4. Output Result
     std::cout << "Result: ";
-    printList(result); // Expected: 7 -> 0 -> 8
+    printList(result); 
 
     return 0;
 }
