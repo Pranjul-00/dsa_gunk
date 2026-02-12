@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 struct ListNode {
     int val;
@@ -38,7 +39,7 @@ public:
 
 void printList(ListNode* node) {
     while (node != nullptr) {
-        std::cout << node->val;
+        cout << node->val;
         if (node->next != nullptr) std::cout << " -> ";
         node = node->next;
     }
