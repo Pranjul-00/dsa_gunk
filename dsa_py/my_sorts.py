@@ -2,12 +2,15 @@ import random
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Sorting Algorithms
+
 def bubbleSort(arr):
     A = arr.copy()
-    n= len(A)
+    n = len(A)
     swaps = 0
     comparisions = 0
 
+    # Compare adjacent elements and bubble the largest to the end
     for i in range(n):
         for j in range(0, n-i-1):
             comparisions += 1
@@ -23,6 +26,7 @@ def selectionSort(arr):
     swaps = 0
     comparisions = 0
 
+    # Find the minimum element in the unsorted portion and swap it to the front
     for i in range(n):
         minIndex = i
 
@@ -31,6 +35,7 @@ def selectionSort(arr):
             if A[j] < A[minIndex]:
                 minIndex = j
 
+        # Only swap if a new minimum is found
         if minIndex != i:
             A[i], A[minIndex] = A[minIndex], A[i]
             swaps += 1
@@ -43,6 +48,7 @@ def insertionSort(arr):
     swaps = 0
     comparisions = 0
 
+    # Build the sorted array one element at a time by shifting larger elements to the right
     for i in range(1, n):
         key = A[i]
         j = i-1
@@ -54,23 +60,26 @@ def insertionSort(arr):
                 swaps += 1
                 j -= 1
             else:
-                break
+                break # Early exit if the correct spot is found
 
         A[j+1] = key
 
     return swaps, comparisions
 
 
+# Main part xD
 
+# Test array sizes from 10 to 1000 in steps of 10
 n_values = list(range(10,1001,10))
 allData = []
 
 print("Running Sorts. Please wait...")
 
 for n in n_values:
-
+    # Generate a new random array for this N
     testArray = [random.randint(1,10000) for _ in range(n)]
 
+    # Run and log all three algorithms on the exact same array
     bubbleSwap, bubbleComp = bubbleSort(testArray)
     allData.append({"N": n, "Algorithm": "Bubble", "Swaps": bubbleSwap, "Comparisions": bubbleComp})
 
@@ -80,12 +89,17 @@ for n in n_values:
     insertionSwap, insertionComp = insertionSort(testArray)
     allData.append({"N": n, "Algorithm": "Insertion", "Swaps": insertionSwap, "Comparisions": insertionComp})
 
+# Export and Plotting
+
+# Export to Excel
 df = pd.DataFrame(allData)
 df.to_excel("SortingAnalysis.xlsx", index = False)
 
+# Set custom styles to make overlapping lines visible
 styles = {"Bubble": "o-", "Selection": "--", "Insertion": ":"}
 colors = {"Bubble": "blue", "Selection": "#FF8C00", "Insertion": "#FF0000"}
 
+# Plot 1: Comparisons
 plt.figure(figsize = (10, 6))
 for algo in ["Bubble", "Selection", "Insertion"]:
     subset = df[df["Algorithm"] == algo]
@@ -98,6 +112,7 @@ plt.legend()
 plt.grid(True)
 plt.savefig("Comparisons_Plot.png")
 
+# Plot 2: Swaps
 plt.figure(figsize = (10, 6))
 for algo in ["Bubble", "Selection", "Insertion"]:
     subset = df[df["Algorithm"] == algo]
