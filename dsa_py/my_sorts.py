@@ -84,10 +84,10 @@ for n in n_values:
     allData.append({"N": n, "Algorithm": "Bubble", "Swaps": bubbleSwap, "Comparisons": bubbleComp})
 
     selectionSwap, selectionComp = selectionSort(testArray)
-    allData.append({"N": n, "Algorithm": "Selection", "Swaps": selectionSwap, "Comparisions": selectionComp})
+    allData.append({"N": n, "Algorithm": "Selection", "Swaps": selectionSwap, "Comparisons": selectionComp})
 
     insertionSwap, insertionComp = insertionSort(testArray)
-    allData.append({"N": n, "Algorithm": "Insertion", "Swaps": insertionSwap, "Comparisions": insertionComp})
+    allData.append({"N": n, "Algorithm": "Insertion", "Swaps": insertionSwap, "Comparisons": insertionComp})
 
 # Export and Plotting 
 
