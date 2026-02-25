@@ -38,12 +38,10 @@ int main() {
   string test1 = "({[]})";
   string test2 = "({[})";
 
-  cout << "Test 1 " << test1 << ": " << (isValidParentheses(test1))
-      ? "Valid"
-      : "Invalid" << endl;
-  cout << "Test 2 " << test2 << ": " << (isValidParentheses(test2))
-      ? "Valid"
-      : "Invalid" << endl;
+  cout << "Test 1 " << test1 << ": "
+       << ((isValidParentheses(test1)) ? "Valid" : "Invalid") << endl;
+  cout << "Test 2 " << test2 << ": "
+       << ((isValidParentheses(test2)) ? "Valid" : "Invalid") << endl;
 
   return 0;
 }
