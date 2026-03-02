@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 public class freeCodeCamp {
 
+    // Linear Search O(n)
     public static int linearSearch(int[] arr, int target) {
 
         for (int i = 0; i < arr.length; i++) {
@@ -11,6 +12,7 @@ public class freeCodeCamp {
         return -1;
     }
 
+    // Binary Search O(logn)
     public static int binarySearch(int[] arr, int target) {
         int low = 0;
         int high = arr.length - 1;
@@ -26,6 +28,18 @@ public class freeCodeCamp {
                 high = mid - 1;
         }
         return -1;
+    }
+
+    // MergeSort: Divide O(logn)
+    public static void mergeSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+
+            merge(arr, left, mid, right);
+        }
     }
 
     public static void main(String[] args) {
