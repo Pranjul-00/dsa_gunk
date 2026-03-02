@@ -114,8 +114,10 @@ public class freeCodeCamp {
 
         System.out.println("binarySearch: " + binarySearch(arr, 2) + "\n");
 
-        System.out.println("There were " + printPairs(count) + " for the array, they are given below\n");
-        printPairs(arr);
+        System.out.println("Pairs for the array are given below\n");
+        int finalCount = printPairs(arr);
+
+        System.out.println("\nThere were " + finalCount + " pairs total.");
         System.out.println();
     }
 }
