@@ -85,7 +85,7 @@ public class freeCodeCamp {
 
         int arr[] = { 9, 8, 6, 3, 5, 1, 2, 7, 4 };
 
-        System.out.println("Array being used: " + Arrays.toString(arr));
+        System.out.println("\nArray being used: " + Arrays.toString(arr));
         System.out.println();
 
         System.out.println("Linear Search (unsorted): " + linearSearch(arr, 2));
@@ -98,6 +98,6 @@ public class freeCodeCamp {
         System.out.println("Array after: " + Arrays.toString(arr));
         System.out.println("---------------------\n");
 
-        System.out.println("binarySearch: " + binarySearch(arr, 2));
+        System.out.println("binarySearch: " + binarySearch(arr, 2) + "\n");
     }
 }
