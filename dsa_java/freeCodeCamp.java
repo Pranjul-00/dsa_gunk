@@ -1,5 +1,7 @@
 import java.util.Arrays;
 
+import javax.swing.SpringLayout;
+
 public class freeCodeCamp {
 
     // Linear Search O(n)
@@ -42,12 +44,61 @@ public class freeCodeCamp {
         }
     }
 
+    public static void merge(int[] arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        int[] L = new int[n1];
+        int[] R = new int[n2];
+
+        for (int i = 0; i < n1; ++i)
+            L[i] = arr[left + i];
+        for (int j = 0; j < n2; ++j)
+            R[j] = arr[mid + 1 + j];
+
+        int i = 0, j = 0;
+
+        int k = left;
+        while (i < n1 && j < n2) {
+            if (L(i) <= R[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+
+        while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+
     public static void main(String[] args) {
 
-        int arr[] = { 9, 8, 6, 3, 5, 1, 2, 7, 4 };
-        System.out.println("linearSearch: " + linearSearch(arr, 2));
+        System.out.println("Array being used: " + Arrays.toString(arr));
+        System.out.println();
 
-        Arrays.sort(arr);
+        int arr[] = { 9, 8, 6, 3, 5, 1, 2, 7, 4 };
+        System.out.println("Linear Search (unsorted): " + linearSearch(arr, 2));
+
+        System.out.println("\n--- Starting Merge Sort ---");
+        System.out.println("Array before: " + Arrays.toString(arr));
+
+        mergeSort(arr, 0, arr.length - 1);
+
+        System.out.println("Array after: " + Arrays.toString(arr));
+        System.out.println("---------------------\n");
+
         System.out.println("binarySearch: " + binarySearch(arr, 2));
     }
 }
