@@ -1,10 +1,10 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class freeCodeCamp {
 
     // Linear Search O(n)
     public static int linearSearch(int[] arr, int target) {
-
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == target)
                 return i;
@@ -109,29 +109,56 @@ public class freeCodeCamp {
     }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] arr = { 9, 8, 6, 3, 5, 1, 2, 7, 4 };
+        boolean isRunning = true;
+        int target = 2;
 
-        int arr[] = { 9, 8, 6, 3, 5, 1, 2, 7, 4 };
+        while (isRunning) {
+            System.out.println("\n=== DSA TOOLKIT MENU ===");
+            System.out.println("Current Array: " + Arrays.toString(arr));
+            System.out.println("Target Number: " + target);
+            System.out.println("------------------------");
+            System.out.println("1. Run Linear Search O(n)");
+            System.out.println("2. Run Merge Sort O(n log n)");
+            System.out.println("3. Run Binary Search O(log n) -> (Run Merge Sort first!)");
+            System.out.println("4. Print All Pairs O(n^2)");
+            System.out.println("5. Print All Triplets O(n^3)");
+            System.out.println("0. Exit Program");
+            System.out.print("Enter your choice: ");
 
-        System.out.println("\nArray being used: " + Arrays.toString(arr));
-        System.out.println("Target: 2");
-        System.out.println();
+            int choice = scanner.nextInt();
+            System.out.println();
 
-        System.out.println("Linear Search (unsorted): " + linearSearch(arr, 2));
+            switch (choice) {
+                case 1:
+                    System.out.println("Linear Search index result: " + linearSearch(arr, target));
+                    break;
+                case 2:
+                    System.out.println("Sorting array...");
+                    mergeSort(arr, 0, arr.length - 1);
+                    System.out.println("Array sorted successfully!");
+                    break;
+                case 3:
+                    System.out.println("Binary Search index result: " + binarySearch(arr, target));
+                    break;
+                case 4:
+                    int pairCount = printPairs(arr);
+                    System.out.println("Total pairs printed: " + pairCount);
+                    break;
+                case 5:
+                    int tripletCount = printTriplets(arr);
+                    System.out.println("Total triplets printed: " + tripletCount);
+                    break;
+                case 0:
+                    System.out.println("Exiting program. Goodbye!");
+                    isRunning = false;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please select a number from 0 to 5.");
+            }
+        }
 
-        System.out.println("\n--- Starting Merge Sort ---");
-        System.out.println("Array before: " + Arrays.toString(arr));
-
-        mergeSort(arr, 0, arr.length - 1);
-
-        System.out.println("Array after: " + Arrays.toString(arr));
-        System.out.println("---------------------\n");
-
-        System.out.println("binarySearch: " + binarySearch(arr, 2) + "\n");
-
-        System.out.println("Pairs for the array are given below\n");
-        int finalCount = printPairs(arr);
-
-        System.out.println("\nThere were " + finalCount + " pairs total.");
-        System.out.println();
+        scanner.close();
     }
 }
