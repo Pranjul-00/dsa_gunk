@@ -1,7 +1,5 @@
 import java.util.Arrays;
 
-import javax.swing.SpringLayout;
-
 public class freeCodeCamp {
 
     // Linear Search O(n)
