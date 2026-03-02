@@ -85,10 +85,11 @@ public class freeCodeCamp {
 
     public static void main(String[] args) {
 
+        int arr[] = { 9, 8, 6, 3, 5, 1, 2, 7, 4 };
+
         System.out.println("Array being used: " + Arrays.toString(arr));
         System.out.println();
 
-        int arr[] = { 9, 8, 6, 3, 5, 1, 2, 7, 4 };
         System.out.println("Linear Search (unsorted): " + linearSearch(arr, 2));
 
         System.out.println("\n--- Starting Merge Sort ---");
