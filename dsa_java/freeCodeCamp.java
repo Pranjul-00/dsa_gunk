@@ -94,6 +94,20 @@ public class freeCodeCamp {
         return count;
     }
 
+    // Printing triplets O(n^3)
+    public static int printTriplets(int[] arr) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                for (int k = 0; k < arr.length; k++) {
+                    System.out.println(arr[i] + " " + arr[j] + " " + arr[k]);
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
 
         int arr[] = { 9, 8, 6, 3, 5, 1, 2, 7, 4 };
