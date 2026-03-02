@@ -112,7 +112,7 @@ public class freeCodeCamp {
         System.out.println("binarySearch: " + binarySearch(arr, 2) + "\n");
 
         System.out.println("Pairs for the array are given below\n");
-        System.out.println(printPairs(arr));
+        printPairs(arr);
         System.out.println();
     }
 }
