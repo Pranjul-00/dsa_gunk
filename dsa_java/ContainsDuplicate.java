@@ -1,8 +1,6 @@
 import java.util.Arrays;
 import java.util.HashSet;
 
-import javax.swing.SpringLayout;
-
 public class ContainsDuplicate {
 
     public static boolean containsDuplicate(int[] nums) {
