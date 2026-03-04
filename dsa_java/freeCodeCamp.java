@@ -116,17 +116,20 @@ public class freeCodeCamp {
     }
 
     // Permuations of string (n X n!)
-    public static void permute(String str, String ans) {
+    public static int permute(String str, String ans) {
         if (str.length() == 0) {
             System.out.println(ans);
-            return;
+            return 1;
         }
 
-        for (int i = 0; i < str.length; i++) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
             char ch = str.charAt(i);
+
             String rest = str.substring(0, i) + str.substring(i + 1);
-            permute(rest, ans + ch);
+            count += permute(rest, ans + ch);
         }
+        return count;
     }
 
     public static void main(String[] args) {
@@ -184,12 +187,18 @@ public class freeCodeCamp {
                     System.out.println();
 
                     break;
+                case 7:
+                    System.out.print("Enter string to permute: ");
+                    String str = scanner.next();
+                    int permCount = permute(str, "");
+                    System.out.println("Total permutations printed: " + permCount);
+                    break;
                 case 0:
                     System.out.println("Exiting program. Goodbye!");
                     isRunning = false;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please select a number from 0 to 5.");
+                    System.out.println("Invalid choice. Please select a number from 0 to 7.");
             }
         }
 
