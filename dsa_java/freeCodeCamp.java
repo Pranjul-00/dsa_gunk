@@ -160,7 +160,7 @@ public class freeCodeCamp {
                 case 6:
                     System.out.print("Enter a number: ");
                     int n = scanner.nextInt();
-                    fibonacci(n);
+                    System.out.println(fibonacci(n));
 
                     break;
                 case 0:
