@@ -158,11 +158,12 @@ public class freeCodeCamp {
                     System.out.println("Total triplets printed: " + tripletCount);
                     break;
                 case 6:
-                    System.out.print("Enter a number: ");
+                    System.out.print("Enter how many numbers of the series to print: ");
                     int n = scanner.nextInt();
 
+                    System.out.print("Fibonacci Series: ");
                     for (int i = 0; i < n; i++) {
-                        System.out.println(fibonacci(i) + " ");
+                        System.out.print(fibonacci(i) + " ");
                     }
                     System.out.println();
 
