@@ -115,6 +115,20 @@ public class freeCodeCamp {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
+    // Permuations of string (n X n!)
+    public static void permute(String str, String ans) {
+        if (str.length() == 0) {
+            System.out.println(ans);
+            return;
+        }
+
+        for (int i = 0; i < str.length; i++) {
+            char ch = str.charAt(i);
+            String rest = str.substring(0, i) + str.substring(i + 1);
+            permute(rest, ans + ch);
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] arr = { 9, 8, 6, 3, 5, 1, 2, 7, 4 };
@@ -132,6 +146,7 @@ public class freeCodeCamp {
             System.out.println("4. Print All Pairs O(n^2)");
             System.out.println("5. Print All Triplets O(n^3)");
             System.out.println("6. Fibonacci Series");
+            System.out.println("7. Permuations of a string");
             System.out.println("0. Exit Program");
             System.out.print("Enter your choice: ");
 
