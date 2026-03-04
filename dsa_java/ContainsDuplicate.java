@@ -21,10 +21,11 @@ public class ContainsDuplicate {
         int[] arrayWithDupes = { 1, 2, 3, 1 };
         int[] arrayWithoutDupes = { 1, 2, 3, 4 };
 
-        System.out.println("Array 1: " + Arrays.toString(arrayWithDupes));
+        System.out.println("]\nArray 1: " + Arrays.toString(arrayWithDupes));
         System.out.println("Contains Duplicate? : " + containsDuplicate(arrayWithDupes));
 
         System.out.println("\nArray 2: " + Arrays.toString(arrayWithoutDupes));
         System.out.println("Contains Duplicate? : " + containsDuplicate(arrayWithoutDupes));
+        System.out.println();
     }
 }
