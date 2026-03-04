@@ -27,10 +27,10 @@ public class TwoSums {
         System.out.println("---------------------------");
 
         int[] optimalResult = twoSums(nums, target);
-        System.out.println("Optimal Result indices: ", Arrays.toString(optimalResult));
+        System.out.println("Optimal Result indices: " + Arrays.toString(optimalResult));
 
         System.out.println("\nSorting using the freeCodeCamp.java file...");
         freeCodeCamp.mergeSort(nums, 0, nums.length);
-        System.out.println("Sorted Array: ", Arrays.toString(nums));
+        System.out.println("Sorted Array: " + Arrays.toString(nums));
     }
 }
