@@ -108,6 +108,12 @@ public class freeCodeCamp {
         return count;
     }
 
+    public static int fibonacci(int n) {
+        if (n <= 1)
+            return n;
+        return fib(n - 1) + fib(n - 2);
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] arr = { 9, 8, 6, 3, 5, 1, 2, 7, 4 };
@@ -124,6 +130,7 @@ public class freeCodeCamp {
             System.out.println("3. Run Binary Search O(log n) -> (Run Merge Sort first!)");
             System.out.println("4. Print All Pairs O(n^2)");
             System.out.println("5. Print All Triplets O(n^3)");
+            System.out.println("6. Fibonacci Series");
             System.out.println("0. Exit Program");
             System.out.print("Enter your choice: ");
 
@@ -149,6 +156,12 @@ public class freeCodeCamp {
                 case 5:
                     int tripletCount = printTriplets(arr);
                     System.out.println("Total triplets printed: " + tripletCount);
+                    break;
+                case 6:
+                    System.out.print("Enter a number: ");
+                    int n = scanner.nextInt();
+                    fibonacci(n);
+
                     break;
                 case 0:
                     System.out.println("Exiting program. Goodbye!");
